@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SwiftBank — Banking for the Future</title>
+  <title>Welcome to Banking for the Future</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -90,24 +90,75 @@
     .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 20px; }
     .cta-section p { font-size: 1rem; color: var(--gray); margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-    footer { background: #060e1a; border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 60px; display: flex; align-items: center; justify-content: space-between; }
+    .contact { padding: 100px 60px; background: var(--navy-mid); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; max-width: 1100px; margin: 0 auto; }
+    .contact-info h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 600; line-height: 1.25; margin-bottom: 16px; }
+    .contact-info > p { font-size: 0.95rem; color: var(--gray); line-height: 1.75; margin-bottom: 32px; }
+    .contact-details { display: flex; flex-direction: column; gap: 18px; }
+    .contact-item { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-item .label { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .contact-item a, .contact-item span { font-size: 0.95rem; color: var(--white); text-decoration: none; }
+    .contact-item a:hover { color: var(--gold); }
+    .contact-form { background: var(--navy); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 36px; display: flex; flex-direction: column; gap: 16px; }
+    .contact-form label { font-size: 0.82rem; font-weight: 500; color: var(--gray); }
+    .contact-form input,
+    .contact-form textarea { width: 100%; padding: 12px 14px; background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; }
+    .contact-form input:focus,
+    .contact-form textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-form button { align-self: flex-start; margin-top: 4px; }
+
+    footer { background: #060e1a; border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 60px 28px; }
+    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; margin-bottom: 32px; }
     .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; }
     .footer-logo span { color: var(--gold); }
-    .footer-links { display: flex; gap: 28px; list-style: none; }
+    .footer-tagline { font-size: 0.82rem; color: var(--gray); margin-top: 10px; max-width: 240px; line-height: 1.6; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px 28px; list-style: none; }
     .footer-links a { font-size: 0.82rem; color: var(--gray); text-decoration: none; transition: color 0.3s; }
     .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: 0.78rem; color: var(--gray); }
+    .footer-copy { font-size: 0.78rem; color: var(--gray); border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; text-align: center; }
+
+    @media (max-width: 1024px) {
+      nav, .hero, .stats-bar, .services, .security, .cta-section, .contact, footer { padding-left: 36px; padding-right: 36px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .security { gap: 40px; }
+      .contact-grid { gap: 32px; }
+    }
 
     @media (max-width: 768px) {
-      nav { padding: 16px 24px; }
+      nav { padding: 14px 20px; gap: 12px; flex-wrap: wrap; }
+      .logo { font-size: 1.35rem; }
       .nav-links { display: none; }
-      .hero { padding: 100px 24px 60px; }
-      .stats-bar { grid-template-columns: repeat(2,1fr); padding: 32px 24px; }
-      .services { padding: 60px 24px; }
+      .nav-cta { margin-left: auto; }
+      .btn-outline, .btn-primary { padding: 8px 14px; font-size: 0.8rem; }
+      .hero { padding: 100px 20px 60px; min-height: auto; }
+      .hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .hero-actions { flex-direction: column; }
+      .hero-actions button { width: 100%; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 32px 20px; gap: 12px; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 16px 8px; }
+      .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+      .services, .security, .cta-section, .contact { padding: 60px 20px; }
       .services-grid { grid-template-columns: 1fr; }
-      .security { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
-      .cta-section { padding: 60px 24px; }
-      footer { flex-direction: column; gap: 24px; padding: 32px 24px; text-align: center; }
+      .security { grid-template-columns: 1fr; gap: 40px; }
+      .security-visual { grid-template-columns: 1fr; }
+      .security-card:first-child { grid-column: auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px; }
+      .contact-form button { width: 100%; }
+      footer { padding: 36px 20px 24px; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+      .footer-tagline { max-width: none; }
+      .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat-item { border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .stat-item:last-child { border-bottom: none; }
+      .nav-cta { width: 100%; }
+      .nav-cta .btn-outline { display: none; }
+      .nav-cta .btn-primary { width: 100%; }
     }
   </style>
 </head>
@@ -119,6 +170,7 @@
       <li><a href="#">Business</a></li>
       <li><a href="#">Investments</a></li>
       <li><a href="#">About</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-cta">
       <button class="btn-outline">Log In</button>
@@ -187,15 +239,59 @@
     <button class="btn-hero">Open Your Account Today</button>
   </section>
 
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-tag">Get in Touch</span>
+        <h2>We're Here to Help</h2>
+        <p>Have a question about your account, a loan, or our services? Reach out and our team will get back to you within one business day.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div>
+              <div class="label">Phone</div>
+              <a href="tel:+9118001234567">1800 123 4567</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="label">Email</div>
+              <a href="mailto:hello@swiftbank.example">hello@swiftbank.example</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="label">Hours</div>
+              <span>Mon–Sat, 9:00 AM – 6:00 PM IST</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" action="#" method="get">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <button class="btn-hero" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
   <footer>
-    <div class="footer-logo">Swift<span>Bank</span></div>
-    <ul class="footer-links">
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Terms of Service</a></li>
-      <li><a href="#">Contact Us</a></li>
-      <li><a href="#">Careers</a></li>
-      <li><a href="#">RBI Guidelines</a></li>
-    </ul>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Swift<span>Bank</span></div>
+        <p class="footer-tagline">Secure, seamless banking for every stage of life.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">RBI Guidelines</a></li>
+      </ul>
+    </div>
     <div class="footer-copy">© 2026 SwiftBank. All rights reserved.</div>
   </footer>
 </body>
